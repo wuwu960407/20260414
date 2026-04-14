@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>水底生態聚落 - 學習歷程</title>
+  <script src="libraries/p5.min.js"></script>
+  <script src="libraries/p5.sound.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #011a27;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    /* Iframe 彈窗的樣式設計 */
+    #modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      background: rgba(0, 15, 30, 0.85); /* 深海色背板 */
+      z-index: 100;
+      backdrop-filter: blur(5px);
+    }
+    #modal-content {
+      position: absolute;
+      top: 10%; left: 10%; width: 80%; height: 80%;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .close-btn {
+      background: #0077b6; color: white; padding: 10px 20px;
+      text-align: right; cursor: pointer; font-weight: bold; font-size: 1.2rem;
+    }
+    .close-btn:hover { background: #03045e; }
+    #workFrame { flex-grow: 1; border: none; width: 100%; }
+  </style>
+</head>
+<body>
+  <div id="modal-overlay">
+    <div id="modal-content">
+      <div class="close-btn" onclick="closeIframe()">✖ 關閉作品</div>
+      <iframe id="workFrame" src=""></iframe>
+    </div>
+  </div>
+  <script src="sketch.js"></script>
+</body>
+</html>
